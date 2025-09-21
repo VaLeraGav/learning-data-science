@@ -653,14 +653,13 @@ $\mathcal{L}(X, \vec{y}, \vec{w}) = \frac{1}{2n} (\vec{y} - X \vec{w})^T (\vec{y
 
 **Шпаргалка по матричным производным**
 
-$
-\begin{aligned}
-\frac{\partial}{\partial x} \, x^T a &= a \\[2mm]
-\frac{\partial}{\partial x} \, x^T A x &= (A + A^T)x \\[1mm]
-\frac{\partial}{\partial A} \, x^T A y &= x y^T \\[1mm]
-\frac{\partial}{\partial x} \, A^{-1} &= -A^{-1} \frac{\partial A}{\partial x} A^{-1}
-\end{aligned}
-$
+$\frac{\partial}{\partial x} x^T a = a$
+
+$\frac{\partial}{\partial x} x^T A x = (A + A^T)x$
+
+$\frac{\partial}{\partial A} x^T A y = x y^T$
+
+$\frac{\partial}{\partial x} A^{-1} = - A^{-1} \frac{\partial A}{\partial x} A^{-1}$
 
 Решение:
 

@@ -599,22 +599,15 @@ $\large y_i = \sum_{j=0}^m w_j X_{ij} + \epsilon_i$
 > 
 > ![Heteroscedasticity](./images/Heteroscedasticity.png)
 
-
 Оценка $\hat{w}_i$ весов $w_i$ называется линейной, если
 
 $\large \hat{w}_i = \omega_{1i}y_1 + \omega_{2i}y_2 + \cdots + \omega_{ni}y_n$
 
-
 где $\forall\ k\ \omega_{ki}$ зависит только от наблюдаемых данных $X$ и почти наверняка нелинейно. Так как решением задачи поиска оптимальных весов будет именно линейная оценка, то и модель называется линейной регрессией. Введем еще одно определение. Оценка $\hat{w}_i$ называется несмещенной тогда, когда матожидание оценки равно реальному, но неизвестному значению оцениваемого параметра:
-
 
 $\large \mathbb{E}\left[\hat{w}_i\right] = w_i$
 
-
 Один из способов вычислить значения параметров модели является **метод наименьших квадратов** (МНК), который минимизирует среднеквадратичную ошибку между реальным значением зависимой переменной и прогнозом, выданным моделью:
-
-
-$\large \begin{array}{rcl}\mathcal{L}\left(X, \vec{y}, \vec{w} \right) &=& \frac{1}{2n} \sum_{i=1}^n \left(y_i - \vec{w}^T \vec{x}_i\right)^2 \\ &=& \frac{1}{2n} \left\| \vec{y} - X \vec{w} \right\|_2^2 \\ &=& \frac{1}{2n} \left(\vec{y} - X \vec{w}\right)^T \left(\vec{y} - X \vec{w}\right) \end{array}$
 
 **Сумма квадратов ошибок**
 
@@ -663,9 +656,23 @@ $\frac{\partial}{\partial x} A^{-1} = - A^{-1} \frac{\partial A}{\partial x} A^{
 
 Решение:
 
-$\large \begin{array}{rcl} \frac{\partial \mathcal{L}}{\partial \vec{w}} &=& \frac{\partial}{\partial \vec{w}} \frac{1}{2n} \left( \vec{y}^T \vec{y} -2\vec{y}^T X \vec{w} + \vec{w}^T X^T X \vec{w}\right) \\ &=& \frac{1}{2n} \left(-2 X^T \vec{y} + 2X^T X \vec{w}\right) \end{array}$
+Градиент функции потерь по вектору параметров $\vec{w}$:
 
-$\large \begin{array}{rcl} \frac{\partial \mathcal{L}}{\partial \vec{w}} = 0 &\Leftrightarrow& \frac{1}{2n} \left(-2 X^T \vec{y} + 2X^T X \vec{w}\right) = 0 \\ &\Leftrightarrow& -X^T \vec{y} + X^T X \vec{w} = 0 \\ &\Leftrightarrow& X^T X \vec{w} = X^T \vec{y} \\ &\Leftrightarrow& \vec{w} = \left(X^T X\right)^{-1} X^T \vec{y} \end{array}$
+$\frac{\partial \mathcal{L}}{\partial \vec{w}} 
+= \frac{\partial}{\partial \vec{w}} \frac{1}{2n} \left( \vec{y}^T \vec{y} -2\vec{y}^T X \vec{w} + \vec{w}^T X^T X \vec{w}\right)
+= \frac{1}{2n} \left(-2 X^T \vec{y} + 2 X^T X \vec{w}\right)$
+
+Приравниваем градиент к нулю для нахождения минимума:
+
+$\frac{\partial \mathcal{L}}{\partial \vec{w}} = 0 \quad \Leftrightarrow \quad \frac{1}{2n} \left(-2 X^T \vec{y} + 2 X^T X \vec{w}\right) = 0 \quad \Leftrightarrow \quad - X^T \vec{y} + X^T X \vec{w} = 0$
+
+Отсюда получаем **нормальное уравнение МНК**:
+
+$X^T X \vec{w} = X^T \vec{y}$
+
+И окончательное **аналитическое решение** для оптимальных коэффициентов:
+
+$\vec{w} = (X^T X)^{-1} X^T \vec{y}$
 
 Итак, имея в виду все определения и условия описанные выше, мы можем утверждать, опираясь на **теорему Маркова-Гаусса**, что оценка МНК является лучшей оценкой параметров модели, среди всех линейных и несмещенных оценок, то есть обладающей наименьшей дисперсией.
 

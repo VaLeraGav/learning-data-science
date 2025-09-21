@@ -594,13 +594,15 @@ $\large y_i = \sum_{j=0}^m w_j X_{ij} + \epsilon_i$
 - случайные ошибки не скоррелированы: $\forall i \neq j: \text{Cov}\left(\epsilon_i, \epsilon_j\right) = 0$.
 
 > `Гомоскедастичность` — это термин из статистики и эконометрики, который описывает ситуацию, когда дисперсия ошибок (или случайных отклонений) одинакова для всех значений объясняющей переменной. Проще говоря, разброс ошибок не зависит от того, где вы находитесь на графике регрессии.
+> 
 > ![Homoscedasticity](./images/Homoscedasticity.png)
+> 
 > ![Heteroscedasticity](./images/Heteroscedasticity.png)
 
 
 Оценка $\hat{w}_i$ весов $w_i$ называется линейной, если
 
-$\large \hat{w}_i = \omega_{1i}y_1 + \omega_{2i}y_2 + \cdots + \omega_{ni}y_n,$
+$\large \hat{w}_i = \omega_{1i}y_1 + \omega_{2i}y_2 + \cdots + \omega_{ni}y_n$
 
 
 где $\forall\ k\ \omega_{ki}$ зависит только от наблюдаемых данных $X$ и почти наверняка нелинейно. Так как решением задачи поиска оптимальных весов будет именно линейная оценка, то и модель называется линейной регрессией. Введем еще одно определение. Оценка $\hat{w}_i$ называется несмещенной тогда, когда матожидание оценки равно реальному, но неизвестному значению оцениваемого параметра:
@@ -651,8 +653,14 @@ $\mathcal{L}(X, \vec{y}, \vec{w}) = \frac{1}{2n} (\vec{y} - X \vec{w})^T (\vec{y
 
 **Шпаргалка по матричным производным**
 
-$\large \begin{array}{rcl} \frac{\partial}{\partial x} x^T a &=& a \\ 
-\frac{\partial}{\partial x} x^T A x &=& \left(A + A^T\right)x \\ \frac{\partial}{\partial A} x^T A y &=& xy^T\\ \frac{\partial}{\partial x} A^{-1} &=& -A^{-1} \frac{\partial A}{\partial x} A^{-1} \end{array}$
+$
+\begin{aligned}
+\frac{\partial}{\partial x} \, x^T a &= a \\[2mm]
+\frac{\partial}{\partial x} \, x^T A x &= (A + A^T)x \\[1mm]
+\frac{\partial}{\partial A} \, x^T A y &= x y^T \\[1mm]
+\frac{\partial}{\partial x} \, A^{-1} &= -A^{-1} \frac{\partial A}{\partial x} A^{-1}
+\end{aligned}
+$
 
 Решение:
 

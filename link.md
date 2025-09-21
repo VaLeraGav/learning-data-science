@@ -34,3 +34,14 @@ https://habr.com/ru/post/541064/    Курсы и книги для изучен
 
 
 https://www.kaggle.com/learn/data-visualization
+
+
+https://github.com/polinasvp/Linear-models-in-machine-learning
+
+
+
+
+https://github.com/esokolov/ml-course-hse?tab=readme-ov-file
+
+
+https://developers.google.com/machine-learning/crash-course/overfitting/imbalanced-datasets?hl=ru

@@ -45,3 +45,6 @@ https://github.com/esokolov/ml-course-hse?tab=readme-ov-file
 
 
 https://developers.google.com/machine-learning/crash-course/overfitting/imbalanced-datasets?hl=ru
+
+markdown конспект
+https://github.com/Yorko/mlcourse.ai/blob/a045e96/mlcourse_ai_jupyter_book/book/topic04/topic4_linear_models_part1_mse_likelihood_bias_variance.md
